@@ -12,17 +12,19 @@
     </header>
 
     <div class="tododiv">
-      <form class="todoform">
-        <input type="text" id="todo" placeholder="title" /><br />
-        <textarea
-          type="text"
-          id="todotext"
-          placeholder="take a note..."
-        ></textarea
-        ><br />
-        <button id="btnsave">ADD</button>
-      </form>
+      <!-- <form class="todoform"> -->
+      <input type="text" id="todo" placeholder="title" /><br />
+      <textarea
+        type="text"
+        id="todotext"
+        placeholder="take a note..."
+      ></textarea
+      ><br />
+      <button id="btnsave">ADD</button>
+      <!-- </form> -->
     </div>
+
+    <ul id="ulList"></ul>
 
     <script>
       document.getElementById("btnsave").addEventListener("click", function () {
@@ -30,19 +32,40 @@
         let todotext = document.getElementById("todotext");
         let titlevalue = title.value.trim();
         let textvalue = todotext.value.trim();
-        if (titlevalue == "" && textvalue == "") {
+        if (titlevalue == "") {
           title.value = "";
           todotext.value = "";
           return;
         }
-        localStorage.setItem("titlevalue", JSON.stringify(titlevalue));
-        JSON.parse(localStorage.getItem("titlevalue"));
-        title.value = "";
 
+        let titlevalues = JSON.parse(localStorage.getItem("titlevalue")) || [];
+        let textvalues = JSON.parse(localStorage.getItem("textvalue")) || [];
+        [titlevalues].push(titlevalue);
+        [textvalues].push(textvalue);
+        localStorage.setItem("titlevalue", JSON.stringify(titlevalue));
         localStorage.setItem("textvalue", JSON.stringify(textvalue));
-        JSON.parse(localStorage.getItem("textvalue"));
+        title.value = "";
         todotext.value = "";
+
+        displayValues();
       });
+      function displayValues() {
+        let titlevalues = JSON.parse(localStorage.getItem("titlevalue")) || [];
+        let textvalues = JSON.parse(localStorage.getItem("textvalue")) || [];
+
+        let valuelist = document.getElementById("ulList");
+        valuelist.innerHTML = "";
+        [titlevalues].forEach((element, index) => {
+          let li = document.createElement("li");
+          li.textContent = element;
+          valuelist.append(li);
+        });
+        [textvalues].forEach((element, index) => {
+          let textli = document.createElement("textli");
+          textli.textContent = element;
+          valuelist.append(textli);
+        });
+      }
     </script>
   </body>
 </html>
