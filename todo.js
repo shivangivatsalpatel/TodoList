@@ -21,7 +21,20 @@ function displayValues() {
 
   task.forEach((element, index) => {
     let li = document.createElement("li");
-    li.textContent = element;
+    li.textContent = element + " ";
+    let deletebutton = document.createElement("button");
+    deletebutton.textContent = "Delete";
+    deletebutton.addEventListener("click", function () {
+      removetask(index);
+    });
+    li.append(deletebutton);
     listvalue.append(li);
   });
+}
+
+function removetask(index) {
+  let task = JSON.parse(localStorage.getItem("task")) || [];
+  task.splice(index, 1);
+  localStorage.setItem("task", JSON.stringify(task));
+  displayValues();
 }
