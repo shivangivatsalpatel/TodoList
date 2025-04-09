@@ -13,89 +13,19 @@
 
     <div class="tododiv">
       <!-- <form class="todoform"> -->
-      <input type="text" id="input" placeholder="title" /><br />
-      <!-- <textarea
+      <input type="text" id="todoinput" placeholder="title" /><br />
+      <textarea
         type="text"
         id="todotext"
         placeholder="take a note..."
-      ></textarea >-->
+      ></textarea>
       <br />
       <button id="btnsave">ADD</button>
       <!-- </form> -->
     </div>
 
-    <ul id="taskList"></ul>
+    <div id="todolist"></div>
 
-    <script src="todo.js">
-      // document.getElementById("btnsave").addEventListener("click", function () {
-      //   let input = document.getElementById("input");
-      //   let task = input.value.trim();
-      //   if (task === "") return;
-
-      //   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-      //   tasks.push(task);
-      //   localStorage.setItem("tasks", JSON.stringify(tasks));
-      //   input.value = "";
-      //   displayTasks();
-      // });
-
-      // function displayTasks() {
-      //   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-      //   let taskList = document.getElementById("taskList");
-      //   taskList.innerHTML = "";
-
-      //   tasks.forEach((task, index) => {
-      //     let li = document.createElement("li");
-      //     li.textContent = task;
-
-      //     // ✅ Clicking on task removes it from UI & localStorage
-      //     li.addEventListener("click", function () {
-      //       removeTask(index);
-      //     });
-
-      //     taskList.appendChild(li);
-      //   });
-      //   // localStorage.clear();
-      //   // alert("all tasks has been removed");
-      //   localStorage.removeItem(titlevalue);
-      //   localStorage.removeItem(textvalue);
-      //   let title = document.getElementById("todo");
-      //   let todotext = document.getElementById("todotext");
-      //   let titlevalue = title.value.trim();
-      //   let textvalue = todotext.value.trim();
-      //   if (titlevalue == "") {
-      //     title.value = "";
-      //     todotext.value = "";
-      //     return;
-      //   }
-      //   let titlevalues = JSON.parse(localStorage.getItem("titlevalue")) || [];
-      //   let textvalues = JSON.parse(localStorage.getItem("textvalue")) || [];
-      //   titlevalues.push(titlevalue);
-      //   console.log(titlevalues);
-      //   textvalues.push(textvalue);
-      //   localStorage.setItem("titlevalue", JSON.stringify(titlevalue));
-      //   localStorage.setItem("textvalue", JSON.stringify(textvalue));
-      //   title.value = "";
-      //   todotext.value = "";
-      //   displayValues();
-      // });
-      // function displayValues() {
-      //   let titlevalues = JSON.parse(localStorage.getItem("titlevalue")) || [];
-      //   let textvalues = JSON.parse(localStorage.getItem("textvalue")) || [];
-
-      //   let valuelist = document.getElementById("ulList");
-      //   valuelist.innerHTML = "";
-      //   titlevalues.forEach((element, index) => {
-      //     let li = document.createElement("li");
-      //     li.textContent = element;
-      //     valuelist.append(li);
-      //   });
-      //   // [textvalues].forEach((element, index) => {
-      //   //   let textli = document.createElement("textli");
-      //   //   textli.textContent = element;
-      //   //   valuelist.append(textli);
-      //   // });
-      //}
-    </script>
+    <script src="todo.js"></script>
   </body>
 </html>

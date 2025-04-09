@@ -64,7 +64,7 @@ body {
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 } */
 
-#todo,
+#todoinput,
 #todotext {
   width: 100%;
   border: none;
@@ -93,23 +93,46 @@ body {
   background-color: #d29f80;
 }
 
-#ulList {
+#todolist div {
   background: #fff;
-  list-style: none;
   display: inline-block;
   position: relative;
   width: 250px;
   margin: 30px auto 20px auto;
+  margin-right: 30px;
   background: #fff;
-  padding: 15px;
+  padding: 10px;
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 
-li {
-  background-color: red;
+#todolist div input,
+#todolist div textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 4px;
+  font-family: inherit;
+  font-size: 1.2em;
+  resize: none;
+  color: rgb(29, 27, 27);
 }
 
-li button {
-  background-color: green;
+#todolist div button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background-color: #f5ba13;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+#todolist div button:hover {
+  background-color: #d29f80;
 }
